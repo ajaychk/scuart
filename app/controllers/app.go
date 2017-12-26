@@ -6,8 +6,9 @@ import (
 
 	"golang.org/x/net/websocket"
 
+	"github.com/lcn/serial"
 	r "github.com/revel/revel"
-	"github.com/scuart/app/serial"
+	"github.com/scuart/net/lcn"
 )
 
 var errInvalidData = errors.New("invalid data")
@@ -31,7 +32,7 @@ func (c App) Power(id int) r.Result {
 		c.Response.Status = 400
 		return c.RenderError(errInvalidData)
 	}
-	serial.Send(makePowerData(id, on))
+	lcn.Send(strconv.Itoa(id), makePowerData(id, on))
 	r.INFO.Println("power data sent")
 	return c.Render()
 }
@@ -45,7 +46,7 @@ func (c App) Dim(id int) r.Result {
 		c.Response.Status = 400
 		return c.RenderError(errInvalidData)
 	}
-	serial.Send(makeDimData(id, dim))
+	lcn.Send(strconv.Itoa(id), makeDimData(id, dim))
 	r.INFO.Println("dim data sent")
 	return c.Render()
 }
@@ -59,7 +60,7 @@ func (c App) CCT(id int) r.Result {
 		c.Response.Status = 400
 		return c.RenderError(errInvalidData)
 	}
-	serial.Send(makeCCTData(id, cct))
+	lcn.Send(strconv.Itoa(id), makeCCTData(id, cct))
 	r.INFO.Println("cct data sent")
 	return c.Render()
 }
