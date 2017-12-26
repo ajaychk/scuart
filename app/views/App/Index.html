@@ -1,0 +1,141 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <h1>Havells Streetcom LCN</h1>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <ul class='nav nav-pills nav-justified'>
+    <li class='nav-item'>
+      <a class='nav-link active' data-toggle='tab' href='#group'>GROUP</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' data-toggle='tab' href='#light1'>LIGHT_1</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' data-toggle='tab' href='#light2'>LIGHT_2</a>
+    </li>
+  </ul>
+
+  <div class='tab-content'>
+    <div id='group' class='tab-pane active'>
+      <div class="row">
+        <div class="col-md-6">        
+          <h5><i>Last updated at <span id='statusTime'></span></i></h5>
+          <div id='statusPanel'>
+            <h3> INPUT POWER           <span id='statusPanelInputPower' /></h3>
+            <h3> DIM                   <span id='statusPanelDim' /></h3>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3><span class="label label-primary">POWER ON/OFF</span></h3>
+          <input id="powerPanel" name="powerPanel" type="checkbox" checked data-toggle="toggle">
+          <br>     
+          <h3><span class="label label-primary">CCT</span></h3>
+          <input id="cctGroup" type="text"
+          data-slider-id="cctGroupSlider"
+          data-provide="slider"
+          data-slider-ticks="[0, 100]"
+          data-slider-ticks-labels='["0","100"]'
+          data-slider-min="0" 
+          data-slider-max="100" 
+          data-slider-step="1" 
+          data-slider-value="50"/>
+          <input type="button" class="btn btn-primary" id="btn-cct-group" value="Set CCT" />
+          <br>    
+          <h3><span class="label label-primary">DIM</span></h3>
+          <input id="dimGroup" type="text" 
+          data-slider-id="dimGroupSlider"
+          data-provide="slider"
+          data-slider-ticks="[50, 100]"
+          data-slider-ticks-labels='["50","100"]'
+          data-slider-min="50" 
+          data-slider-max="100" 
+          data-slider-step="1" 
+          data-slider-value="75"/>
+          <input type="button" class="btn btn-primary" id="btn-dim-group" value="Set DIM" />
+        </div>
+      </div>	
+    </div>
+    <div id='light1' class='tab-pane'>
+      <div class="row">
+        <div class="col-md-6">
+            <div id='statusLight1'>
+              <status-light></status-light>
+            </div>      
+        </div>     
+        <div class="col-md-6">
+          <h3><span class="label label-primary">POWER ON/OFF</span></h3>
+          <input id="powerLight1" name="powerLight1" type="checkbox" checked data-toggle="toggle">
+          <br>
+          <h3><span class="label label-primary">DIM</span></h3>            
+          <input id="dimLight1" type="text"
+          data-slider-id="dimLight1Slider"
+          data-provide="slider"
+          data-slider-ticks="[50, 100]"
+          data-slider-ticks-labels='["50","100"]'
+          data-slider-min="50"
+          data-slider-max="100"
+          data-slider-step="1"
+          data-slider-value="50"/>
+          <input type="button" class="btn btn-primary" id="btn-dim-light1" value="SET DIM" />
+          <br>
+          <h3><span class="label label-primary">CCT</span></h3>          
+          <input id="cctLight1" type="text"
+          data-slider-id="cctLight1Slider"
+          data-provide="slider"
+          data-slider-ticks="[0, 100]"
+          data-slider-ticks-labels='["0","100"]'
+          data-slider-min="0"
+          data-slider-max="100"
+          data-slider-step="1" 
+          data-slider-value="50"/>
+          <input type="button" class="btn btn-primary" id="btn-cct-light1" value="SET CCT" />
+        </div>
+      </div>
+    </div>
+    <div id='light2' class='tab-pane'>
+      <div class="row">
+        <div class="col-md-6">        
+          <div id='statusLight2'>
+            <status-light></status-light>
+          </div>
+        </div>
+      
+        <div class="col-md-6">
+          <h3><span class="label label-primary">POWER ON/OFF</span></h3>          
+          <input id="powerLight2" name="powerLight2" type="checkbox" checked data-toggle="toggle">
+          <br>
+          <input id="dimLight2" type="text"
+          data-slider-id="dimLight2Slider"
+          data-provide="slider"
+          data-slider-ticks="[50, 100]"
+          data-slider-ticks-labels='["50","100"]'
+          data-slider-min="50"
+          data-slider-max="100"
+          data-slider-step="1"
+          data-slider-value="50"/>
+          <input type="button" class="btn btn-primary" id="btn-dim-light2" value="SET DIM" />       
+          <br>
+          <h3><span class="label label-primary">CCT</span></h3>
+          <input id="cctLight2" type="text"
+          data-slider-id="cctLight2Slider"
+          data-provide="slider"
+          data-slider-ticks="[0, 100]"
+          data-slider-ticks-labels='["0","100"]'
+          data-slider-min="0"
+          data-slider-max="100"
+          data-slider-step="1" 
+          data-slider-value="50"/>
+          <input type="button" class="btn btn-primary" id="btn-cct-light2" value="SET CCT" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{template "footer.html" .}}

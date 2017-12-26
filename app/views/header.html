@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{.title}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap-3.3.6.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/common.css">
+    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css" rel="stylesheet">
+    <script src="/public/js/jquery-2.2.4.min.js"></script>
+    <script src="/public/js/bootstrap-3.3.6.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+    <script src="/public/js/sweetalert.min.js"></script>
+    <script src="/public/js/vue.js"></script>
+    <script src="/public/js/common.js"></script>
+    {{range .moreStyles}}
+      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
+    {{end}}
+    {{range .moreScripts}}
+      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
+    {{end}}
+  </head>
+  <body>
