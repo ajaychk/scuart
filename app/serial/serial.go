@@ -77,6 +77,7 @@ func processStatusData(data []byte) {
 	status.InputPower = data[2]
 	ChanStatus <- status
 }
+
 func chkErr(err error) {
 	if err != nil {
 		log.Println(err)
