@@ -6,8 +6,8 @@ import (
 
 	"golang.org/x/net/websocket"
 
-	"github.com/ajaygh/scuart/app/serial"
 	r "github.com/revel/revel"
+	"github.com/scuart/app/serial"
 )
 
 var errInvalidData = errors.New("invalid data")
